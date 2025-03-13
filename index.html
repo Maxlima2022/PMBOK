@@ -27,7 +27,7 @@
         @media (min-width: 768px) {
             .container {
                 flex-direction: row;
-                justify-content: space-between;
+                justify-content: flex-start;
             }
         }
 
@@ -41,7 +41,8 @@
 
         @media (min-width: 768px) {
             .main-content {
-                width: calc(100% - 300px);
+                width: calc(100% - 270px);
+                margin-right: 20px;
             }
         }
 
@@ -57,6 +58,8 @@
             .side-content {
                 width: 250px;
                 margin-top: 0;
+                position: relative;
+                right: 0;
             }
         }
 
@@ -119,7 +122,8 @@
     <div class="container">
         <!-- Área Principal -->
         <div class="main-content">
-            <h1>Fluxograma de Gerenciamento de Projetos - PMBOK 4ª Edição</h1>
+            <h1>Fluxograma de Gerenciamento de Projetos</h1>
+            <h2>PMBOK 4ª Edição</h2>
             <div class="fluxograma">
                 <!-- Blocos do Fluxograma -->
                 <div class="block blue">Desenvolver o termo de abertura do projeto</div>
@@ -162,7 +166,7 @@
     </div>
 
     <footer>
-       Página Web Desenvolvido por Max - 2025
+        Desenvolvido por Max - 2025
     </footer>
 
     <script>
