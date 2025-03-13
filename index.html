@@ -27,7 +27,7 @@
         @media (min-width: 768px) {
             .container {
                 flex-direction: row;
-                justify-content: flex-start;
+                justify-content: space-between;
             }
         }
 
@@ -58,8 +58,10 @@
             .side-content {
                 width: 250px;
                 margin-top: 0;
-                position: relative;
+                position: sticky;
+                top: 20px;
                 right: 0;
+                align-self: flex-start;
             }
         }
 
@@ -75,23 +77,27 @@
             text-align: center;
             border-radius: 5px;
             cursor: pointer;
-            transition: transform 0.3s;
+            transition: transform 0.3s, background-color 0.5s;
+            animation: blink 2s infinite;
         }
 
         .block:hover {
             transform: scale(1.05);
         }
 
-        /* Cores dos blocos organizadas */
-        .blue { background-color: #2980b9; } /* Integração */
-        .yellow { background-color: #f1c40f; } /* Escopo */
-        .orange { background-color: #e67e22; } /* Tempo */
-        .red { background-color: #c0392b; } /* Custos */
-        .green { background-color: #27ae60; } /* RH */
-        .purple { background-color: #8e44ad; } /* Qualidade */
-        .pink { background-color: #ff69b4; } /* Encerramento */
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
 
-        /* Legenda */
+        .blue { background-color: #2980b9; }
+        .yellow { background-color: #f1c40f; }
+        .orange { background-color: #e67e22; }
+        .red { background-color: #c0392b; }
+        .green { background-color: #27ae60; }
+        .purple { background-color: #8e44ad; }
+        .pink { background-color: #ff69b4; }
+
         .legend-color {
             display: inline-block;
             width: 12px;
@@ -105,54 +111,70 @@
             color: #fff;
         }
 
-        h1, h2 {
+        h1, h2, h3 {
             color: #fff;
         }
 
         footer {
             text-align: center;
-            padding: 25px;
+            padding: 28px;
             background-color: #1a1a1a;
             color: #fff;
             font-family: system-ui;
         }
+
+        .print-btn {
+            padding: 10px 20px;
+            background-color: #27ae60;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-bottom: 20px;
+        }
     </style>
+    <script>
+        function printPage() {
+            window.print();
+        }
+    </script>
 </head>
 <body>
     <div class="container">
-        <!-- Área Principal -->
         <div class="main-content">
             <h1>Fluxograma de Gerenciamento de Projetos</h1>
             <h2>PMBOK 4ª Edição</h2>
+            <button class="print-btn" onclick="printPage()">Imprimir Página</button>
             <div class="fluxograma">
-                <!-- Blocos do Fluxograma -->
+                <h3>Integração</h3>
                 <div class="block blue">Desenvolver o termo de abertura do projeto</div>
-                <div class="block orange">Identificar as partes interessadas</div>
-                <div class="block yellow">Coletar os requisitos</div>
-                <div class="block yellow">Definir o Escopo</div>
-                <div class="block green">Criar a EAP</div>
                 <div class="block blue">Planejar o gerenciamento dos riscos</div>
                 <div class="block blue">Planejar as comunicações</div>
                 <div class="block blue">Planejar as aquisições</div>
-                <div class="block red">Planejar a qualidade</div>
                 <div class="block blue">Identificar os riscos</div>
                 <div class="block blue">Realizar a análise qualitativa dos riscos</div>
                 <div class="block blue">Realizar a análise quantitativa dos riscos</div>
                 <div class="block blue">Planejar as respostas aos riscos</div>
                 <div class="block blue">Desenvolver o plano de gerenciamento do projeto</div>
+                <h3>Escopo</h3>
+                <div class="block yellow">Coletar os requisitos</div>
+                <div class="block yellow">Definir o Escopo</div>
+                <h3>Tempo</h3>
+                <div class="block orange">Identificar as partes interessadas</div>
                 <div class="block yellow">Definir as atividades</div>
                 <div class="block yellow">Sequenciar as atividades</div>
                 <div class="block yellow">Estimar os recursos das atividades</div>
                 <div class="block yellow">Estimar as durações das atividades</div>
                 <div class="block yellow">Desenvolver o cronograma</div>
+                <h3>Custos</h3>
                 <div class="block red">Estimar os custos</div>
                 <div class="block red">Determinar o orçamento</div>
+                <h3>Encerramento</h3>
                 <div class="block pink">Encerrar o projeto ou a fase</div>
                 <div class="block pink">Encerrar as aquisições</div>
             </div>
         </div>
 
-        <!-- Área Lateral -->
         <div class="side-content">
             <h2>Legenda</h2>
             <div class="legend-item"><span class="legend-color blue"></span> Integração</div>
@@ -168,14 +190,5 @@
     <footer>
         Desenvolvido por Max - 2025
     </footer>
-
-    <script>
-        // Adiciona interatividade aos blocos
-        document.querySelectorAll(".block").forEach(block => {
-            block.addEventListener("click", () => {
-                block.classList.toggle("highlighted");
-            });
-        });
-    </script>
 </body>
 </html>
