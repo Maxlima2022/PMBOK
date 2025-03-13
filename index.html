@@ -16,9 +16,7 @@
 
         .container {
             display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
+            justify-content: space-between;
             width: 100%;
             max-width: 1200px;
             margin: 20px auto;
@@ -27,23 +25,18 @@
         }
 
         .main-content {
-            width: 100%;
+            width: calc(100% - 300px);
             background: #1a1a1a;
             padding: 20px;
             border-radius: 8px;
-            margin-bottom: 20px;
             overflow: auto;
         }
 
         .side-content {
-            position: absolute;
-            right: 0;
-            top: 0;
             width: 250px;
             background: #1a1a1a;
             padding: 20px;
             border-radius: 8px;
-            margin: 20px;
             overflow: auto;
         }
 
@@ -162,3 +155,4 @@
     </script>
 </body>
 </html>
+
