@@ -16,7 +16,7 @@
 
         .container {
             display: flex;
-            justify-content: space-between;
+            flex-direction: column;
             width: 100%;
             max-width: 1200px;
             margin: 20px auto;
@@ -24,20 +24,40 @@
             position: relative;
         }
 
+        @media (min-width: 768px) {
+            .container {
+                flex-direction: row;
+                justify-content: space-between;
+            }
+        }
+
         .main-content {
-            width: calc(100% - 300px);
+            width: 100%;
             background: #1a1a1a;
             padding: 20px;
             border-radius: 8px;
             overflow: auto;
         }
 
+        @media (min-width: 768px) {
+            .main-content {
+                width: calc(100% - 300px);
+            }
+        }
+
         .side-content {
-            width: 250px;
+            width: 100%;
             background: #1a1a1a;
             padding: 20px;
             border-radius: 8px;
-            overflow: auto;
+            margin-top: 20px;
+        }
+
+        @media (min-width: 768px) {
+            .side-content {
+                width: 250px;
+                margin-top: 0;
+            }
         }
 
         .fluxograma {
@@ -155,4 +175,3 @@
     </script>
 </body>
 </html>
-
