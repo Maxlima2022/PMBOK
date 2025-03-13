@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fluxograma de Gerenciamento de Projetos - PMBOK 4ª Edição</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #000;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            max-width: 1200px;
+            margin: 20px auto;
+            flex: 1;
+            position: relative;
+        }
+
+        .main-content {
+            width: 100%;
+            background: #1a1a1a;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            overflow: auto;
+        }
+
+        .side-content {
+            position: absolute;
+            right: 0;
+            top: 0;
+            width: 250px;
+            background: #1a1a1a;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px;
+            overflow: auto;
+        }
+
+        .fluxograma {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 10px;
+        }
+
+        .block {
+            padding: 10px;
+            color: white;
+            text-align: center;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        .block:hover {
+            transform: scale(1.05);
+        }
+
+        /* Cores dos blocos */
+        .blue { background-color: #2d9cdb; }
+        .orange { background-color: #f2994a; }
+        .yellow { background-color: #f2c94c; }
+        .green { background-color: #27ae60; }
+        .red { background-color: #eb5757; }
+        .purple { background-color: #9b51e0; }
+        .pink { background-color: #f084c1; }
+
+        /* Legenda */
+        .legend-color {
+            display: inline-block;
+            width: 12px;
+            height: 12px;
+            margin-right: 8px;
+            border-radius: 2px;
+        }
+
+        .legend-item {
+            margin-bottom: 5px;
+            color: #fff;
+        }
+
+        h1, h2 {
+            color: #fff;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #1a1a1a;
+            color: #fff;
+            font-family: system-ui;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Área Principal -->
+        <div class="main-content">
+            <h1>Fluxograma de Gerenciamento de Projetos - PMBOK 4ª Edição</h1>
+            <div class="fluxograma">
+                <!-- Blocos do Fluxograma -->
+                <div class="block blue">Desenvolver o termo de abertura do projeto</div>
+                <div class="block orange">Identificar as partes interessadas</div>
+                <div class="block yellow">Coletar os requisitos</div>
+                <div class="block yellow">Definir o Escopo</div>
+                <div class="block green">Criar a EAP</div>
+                <div class="block blue">Planejar o gerenciamento dos riscos</div>
+                <div class="block blue">Planejar as comunicações</div>
+                <div class="block blue">Planejar as aquisições</div>
+                <div class="block red">Planejar a qualidade</div>
+                <div class="block blue">Identificar os riscos</div>
+                <div class="block blue">Realizar a análise qualitativa dos riscos</div>
+                <div class="block blue">Realizar a análise quantitativa dos riscos</div>
+                <div class="block blue">Planejar as respostas aos riscos</div>
+                <div class="block blue">Desenvolver o plano de gerenciamento do projeto</div>
+                <div class="block yellow">Definir as atividades</div>
+                <div class="block yellow">Sequenciar as atividades</div>
+                <div class="block yellow">Estimar os recursos das atividades</div>
+                <div class="block yellow">Estimar as durações das atividades</div>
+                <div class="block yellow">Desenvolver o cronograma</div>
+                <div class="block red">Estimar os custos</div>
+                <div class="block red">Determinar o orçamento</div>
+                <div class="block pink">Encerrar o projeto ou a fase</div>
+                <div class="block pink">Encerrar as aquisições</div>
+            </div>
+        </div>
+
+        <!-- Área Lateral -->
+        <div class="side-content">
+            <h2>Legenda</h2>
+            <div class="legend-item"><span class="legend-color blue"></span> Integração</div>
+            <div class="legend-item"><span class="legend-color yellow"></span> Escopo</div>
+            <div class="legend-item"><span class="legend-color orange"></span> Tempo</div>
+            <div class="legend-item"><span class="legend-color red"></span> Custos</div>
+            <div class="legend-item"><span class="legend-color green"></span> RH</div>
+            <div class="legend-item"><span class="legend-color purple"></span> Qualidade</div>
+            <div class="legend-item"><span class="legend-color pink"></span> Encerramento</div>
+        </div>
+    </div>
+
+    <footer>
+        Desenvolvido por Max - 2025
+    </footer>
+
+    <script>
+        // Adiciona interatividade aos blocos
+        document.querySelectorAll(".block").forEach(block => {
+            block.addEventListener("click", () => {
+                block.classList.toggle("highlighted");
+            });
+        });
+    </script>
+</body>
+</html>
